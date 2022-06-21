@@ -4,7 +4,6 @@ These are answers to HackerRank's easy-leveled SQL challenges as of 06-21-2022. 
 
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
-**ANSWER**
 ```
 SELECT * FROM CITY WHERE (POPULATION > 100000) AND (COUNTRYCODE = "USA");
 ```
@@ -14,7 +13,8 @@ SELECT * FROM CITY WHERE (POPULATION > 100000) AND (COUNTRYCODE = "USA");
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
 ```
-SELECT * FROM CITY;
+SELECT *
+FROM CITY;
 ```
 
 4. Query all columns for a city in **CITY** with the **ID** `1661`. The **CITY** table is described as follows:
@@ -22,7 +22,9 @@ SELECT * FROM CITY;
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
 ```
-SELECT * FROM CITY WHERE ID = '1661';
+SELECT *
+FROM CITY
+WHERE ID = '1661';
 ```
 
 5. Query all attributes of every Japanese city in the **CITY** table. The **COUNTRYCODE** for Japan is `JPN`. The **CITY** table is described as follows:
@@ -30,7 +32,9 @@ SELECT * FROM CITY WHERE ID = '1661';
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
 ```
-SELECT * FROM CITY WHERE COUNTRYCODE = 'JPN';
+SELECT *
+FROM CITY
+WHERE COUNTRYCODE = 'JPN';
 ```
 
 6. Query the names of all the Japanese cities in the **CITY** table. The **COUNTRYCODE** for Japan is `JPN`. The **CITY** table is described as follows:
@@ -38,7 +42,9 @@ SELECT * FROM CITY WHERE COUNTRYCODE = 'JPN';
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
 ```
-SELECT NAME FROM CITY WHERE (COUNTRYCODE = 'JPN');
+SELECT NAME
+FROM CITY
+WHERE (COUNTRYCODE = 'JPN');
 ```
 
 7. Query a list of **CITY** and **STATE** from the **STATION** table. The **STATION** table is described as follows:
@@ -48,7 +54,8 @@ SELECT NAME FROM CITY WHERE (COUNTRYCODE = 'JPN');
 where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
 
 ```
-SELECT CITY, STATE FROM STATION;
+SELECT CITY, STATE
+FROM STATION;
 ```
 
 8. Query a list of **CITY** names from **STATION** for cities that have an even **ID** number. Print the results in any order, but exclude duplicates from the answer. The **STATION** table is described as follows:
@@ -58,7 +65,9 @@ SELECT CITY, STATE FROM STATION;
 where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
 
 ```
-SELECT DISTINCT CITY FROM STATION WHERE (ID%2 = 0);
+SELECT DISTINCT CITY
+FROM STATION
+WHERE (ID%2 = 0);
 ```
 
 9. Find the difference between the total number of **CITY** entries in the table and the number of distinct **CITY** entries in the table. The **STATION** table is described as follows:
@@ -70,7 +79,8 @@ where **LAT_N** is the northern latitude and **LONG_W** is the western longitude
 For example, if there are three records in the table with **CITY** values `New York`, `New York`, `Bengalaru`, there are 2 different city names: `New York` and `Bengalaru`. The query returns $1$, because $N_{records} - N_{distinct} = 3 - 2 = 1$.
 
 ```
-SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;
+SELECT COUNT(CITY) - COUNT(DISTINCT CITY)
+FROM STATION;
 ```
 
 10. Query the two cities in **STATION** with the shortest and longest **CITY** names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically. The **STATION** table is described as follows:
@@ -98,8 +108,15 @@ $3, 3, 4$ and $3$. The longest name is `PQRS`, but there are $3$ options for sho
 You can write two separate queries to get the desired output. It need not be a single query.
 
 ```
-SELECT TOP 1 CITY, LEN(CITY) FROM STATION ORDER BY LEN(CITY) ASC, CITY ASC;
-SELECT TOP 1 CITY, LEN(CITY) FROM STATION ORDER BY LEN(CITY) DESC, CITY ASC;
+SELECT CITY, LENGTH(CITY)
+FROM STATION
+ORDER BY LENGTH(CITY) ASC, CITY ASC
+LIMIT 1;
+
+SELECT CITY, LENGTH(CITY)
+FROM STATION
+ORDER BY LENGTH(CITY) DESC, CITY ASC
+LIMIT 1;
 ```
 
 
