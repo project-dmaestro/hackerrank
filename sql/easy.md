@@ -139,4 +139,103 @@ ORDER BY LENGTH(CITY) DESC, CITY ASC
 LIMIT 1;
 ```
 
+## Question #10
 
+Query the list of **CITY** names starting with vowels (i.e., a, e, i, o, or u) from **STATION**. Your result cannot contain duplicates. The **STATION** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" width="200">
+
+where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
+
+```
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY REGEXP '[aeiou]$';
+```
+
+## Question #11
+
+Query the list of **CITY** names from **STATION** which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. Your result cannot contain duplicates. The **STATION** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" width="200">
+
+where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
+
+```
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY REGEXP '^[aeiou].*[aeiou]$';
+```
+
+## Question #12
+
+Query the list of **CITY** names from **STATION** that do not start with vowels. Your result cannot contain duplicates. The **STATION** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" width="200">
+
+where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
+
+```
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY REGEXP '^[^aeiou].*';
+```
+
+## Question #13
+
+Query the list of **CITY** names from **STATION** that do not end with vowels. Your result cannot contain duplicates. The **STATION** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" width="200">
+
+where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
+
+```
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY REGEXP '[^aeiou]$';
+```
+
+## Question #14
+
+Query the list of **CITY** names from **STATION** that either do not start or end with vowels. Your result cannot contain duplicates. The **STATION** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" width="200">
+
+where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
+
+```
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY REGEXP '^[^aeiou].*|.*[^aeiou]$';
+```
+
+## Question #15
+
+Query the list of **CITY** names from **STATION** that do not start and end with vowels. Your result cannot contain duplicates. The **STATION** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" width="200">
+
+where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
+
+```
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY REGEXP '^[^aeiou].*[^aeiou]$';
+```
+
+## Question #16
+## Question #17
+## Question #18
+## Question #19
+## Question #20
+## Question #21
+## Question #22
+## Question #23
+## Question #24
+## Question #25
+## Question #26
+## Question #27
+## Question #28
+## Question #29
+## Question #30
+## Question #31
