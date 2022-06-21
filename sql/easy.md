@@ -1,15 +1,6 @@
 These are answers to HackerRank's easy-leveled SQL challenges as of 06-21-2022. All answers are written in MySQL.
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| 1. Query all columns for all American cities in the **CITY** table with populations larger than 100000. The **CountryCode** for America is USA. The **CITY** table is described as follows:
-
-<img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">      | ```
-SELECT * FROM CITY WHERE (POPULATION > 100000) AND (COUNTRYCODE = "USA");
-```      |
-| Paragraph   | Text        |
-
-1. Query all columns for all American cities in the **CITY** table with populations larger than 100000. The **CountryCode** for America is USA. The **CITY** table is described as follows:
+1. Query all columns for all American cities in the **CITY** table with populations larger than 100000. The **COUNTRYCODE** for America is `USA`. The **CITY** table is described as follows:
 
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
@@ -25,7 +16,7 @@ SELECT * FROM CITY WHERE (POPULATION > 100000) AND (COUNTRYCODE = "USA");
 SELECT * FROM CITY;
 ```
 
-4. Query all columns for a city in **CITY** with the **ID** 1661. The **CITY** table is described as follows:
+4. Query all columns for a city in **CITY** with the **ID** `1661`. The **CITY** table is described as follows:
 
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
@@ -33,7 +24,7 @@ SELECT * FROM CITY;
 SELECT * FROM CITY WHERE ID = '1661';
 ```
 
-5. Query all attributes of every Japanese city in the **CITY** table. The **COUNTRYCODE** for Japan is JPN. The **CITY** table is described as follows:
+5. Query all attributes of every Japanese city in the **CITY** table. The **COUNTRYCODE** for Japan is `JPN`. The **CITY** table is described as follows:
 
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
@@ -41,7 +32,7 @@ SELECT * FROM CITY WHERE ID = '1661';
 SELECT * FROM CITY WHERE COUNTRYCODE = 'JPN';
 ```
 
-6. Query the names of all the Japanese cities in the **CITY** table. The **COUNTRYCODE** for Japan is JPN. The **CITY** table is described as follows:
+6. Query the names of all the Japanese cities in the **CITY** table. The **COUNTRYCODE** for Japan is `JPN`. The **CITY** table is described as follows:
 
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
@@ -75,8 +66,31 @@ SELECT DISTINCT CITY FROM STATION WHERE (ID%2 = 0);
 
 where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
 
-For example, if there are three records in the table with CITY values 'New York', 'New York', 'Bengalaru', there are 2 different city names: 'New York' and 'Bengalaru'. The query returns $1$, because $N_{records} - N_{distinct} = 3 - 2 = 1$.
+For example, if there are three records in the table with **CITY** values `New York`, `New York`, `Bengalaru`, there are 2 different city names: `New York` and `Bengalaru`. The query returns $1$, because $N_{records} - N_{distinct} = 3 - 2 = 1$.
 
 ```
 SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;
 ```
+
+10. Query the two cities in **STATION** with the shortest and longest **CITY** names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically. The **STATION** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" width="200">
+
+where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
+
+For example, CITY has four entries: `DEF`, `ABC`, `PQRS` and `WXY`.
+
+**Sample Output**
+
+```
+ABC 3
+PQRS 4
+```
+
+**Explanation**
+
+When ordered alphabetically, the **CITY** names are listed as `ABC`, `DEF`, `PQRS`, and `WXY`, with lengths
+$3, 3, 4$ and $3$. The longest name is `PQRS`, but there are $3$ options for shortest named city. Choose `ABC`, because it comes first alphabetically.
+
+**Note**
+You can write two separate queries to get the desired output. It need not be a single query.
