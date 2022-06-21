@@ -1,4 +1,4 @@
-These are answers to HackerRank's easy-leveled SQL challenges as of 06-21-2022. All answers are written in MySQL.
+These are answers to HackerRank's easy SQL challenges as of 06-21-2022. All answers are written in MySQL.
 
 ## Question #1
 
