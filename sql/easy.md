@@ -4,6 +4,7 @@ These are answers to HackerRank's easy-leveled SQL challenges as of 06-21-2022. 
 
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
+**ANSWER**
 ```
 SELECT * FROM CITY WHERE (POPULATION > 100000) AND (COUNTRYCODE = "USA");
 ```
@@ -78,7 +79,7 @@ SELECT COUNT(CITY) - COUNT(DISTINCT CITY) FROM STATION;
 
 where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
 
-For example, CITY has four entries: `DEF`, `ABC`, `PQRS` and `WXY`.
+For example, **CITY** has four entries: `DEF`, `ABC`, `PQRS` and `WXY`.
 
 **Sample Output**
 
@@ -93,4 +94,12 @@ When ordered alphabetically, the **CITY** names are listed as `ABC`, `DEF`, `PQR
 $3, 3, 4$ and $3$. The longest name is `PQRS`, but there are $3$ options for shortest named city. Choose `ABC`, because it comes first alphabetically.
 
 **Note**
+
 You can write two separate queries to get the desired output. It need not be a single query.
+
+```
+SELECT TOP 1 CITY, LEN(CITY) FROM STATION ORDER BY LEN(CITY) ASC, CITY ASC;
+SELECT TOP 1 CITY, LEN(CITY) FROM STATION ORDER BY LEN(CITY) DESC, CITY ASC;
+```
+
+
