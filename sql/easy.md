@@ -1,3 +1,5 @@
+### These are answers to Hackerrank's easy-leveled SQL challenges as of 06-21-2022. All answers are written in MySQL.
+
 1. Query all columns for all American cities in the **CITY** table with populations larger than 100000. The **CountryCode** for America is USA. The **CITY** table is described as follows:
 
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
@@ -19,7 +21,7 @@ SELECT * FROM CITY;
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
 ```
-SELECT * FROM CITY WHERE (ID = "1661);
+SELECT * FROM CITY WHERE ID = '1661';
 ```
 
 5. Query all attributes of every Japanese city in the **CITY** table. The **COUNTRYCODE** for Japan is JPN. The **CITY** table is described as follows:
@@ -27,26 +29,35 @@ SELECT * FROM CITY WHERE (ID = "1661);
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
 ```
-SELECT * FROM CITY WHERE (COUNTRYCODE = "JPN");
+SELECT * FROM CITY WHERE COUNTRYCODE = 'JPN';
 ```
 
-1. Query the names of all the Japanese cities in the **CITY** table. The **COUNTRYCODE** for Japan is JPN. The **CITY** table is described as follows:
+6. Query the names of all the Japanese cities in the **CITY** table. The **COUNTRYCODE** for Japan is JPN. The **CITY** table is described as follows:
 
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
 ```
-SELECT NAME FROM CITY WHERE (COUNTRYCODE = "JPN");
+SELECT NAME FROM CITY WHERE (COUNTRYCODE = 'JPN');
 ```
 
-6. Query a list of CITY and STATE from the STATION table. The STATION table is described as follows:
+7. Query a list of **CITY** and **STATE** from the **STATION** table. The **STATION** table is described as follows:
 
 <img src = "https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" width="200">
 
 where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
 
 ```
-SELECT CITY, STATE
-FROM STATION;
+SELECT CITY, STATE FROM STATION;
 ```
 
-7. 
+8. Query a list of **CITY** names from **STATION** for cities that have an even **ID** number. Print the results in any order, but exclude duplicates from the answer. The **STATION** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" width="200">
+
+where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
+
+```
+SELECT DISTINCT CITY FROM STATION WHERE (ID%2 = 0);
+```
+
+9.
