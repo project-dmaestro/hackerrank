@@ -1,4 +1,4 @@
-### These are answers to Hackerrank's easy-leveled SQL challenges as of 06-21-2022. All answers are written in MySQL.
+These are answers to HackerRank's easy-leveled SQL challenges as of 06-21-2022. All answers are written in MySQL.
 
 1. Query all columns for all American cities in the **CITY** table with populations larger than 100000. The **CountryCode** for America is USA. The **CITY** table is described as follows:
 
@@ -60,4 +60,10 @@ where **LAT_N** is the northern latitude and **LONG_W** is the western longitude
 SELECT DISTINCT CITY FROM STATION WHERE (ID%2 = 0);
 ```
 
-9.
+9. Find the difference between the total number of **CITY** entries in the table and the number of distinct **CITY** entries in the table. The **STATION** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/9336/1449345840-5f0a551030-Station.jpg" width="200">
+
+where **LAT_N** is the northern latitude and **LONG_W** is the western longitude.
+
+For example, if there are three records in the table with CITY values 'New York', 'New York', 'Bengalaru', there are 2 different city names: 'New York' and 'Bengalaru'. The query returns $1$, because $N_records - N_distinct = 3 - 2 = 1$.
