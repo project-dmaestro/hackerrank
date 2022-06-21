@@ -5,7 +5,9 @@ These are answers to HackerRank's easy-leveled SQL challenges as of 06-21-2022. 
 <img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
 
 ```
-SELECT * FROM CITY WHERE (POPULATION > 100000) AND (COUNTRYCODE = "USA");
+SELECT *
+FROM CITY
+WHERE (POPULATION > 100000) AND (COUNTRYCODE = "USA");
 ```
 
 2. Query all columns (attributes) for every row in the **CITY** table. The **CITY** table is described as follows:
