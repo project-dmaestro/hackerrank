@@ -287,14 +287,167 @@ FROM EMPLOYEE
 ORDER BY NAME ASC;
 ```
 
-
 ## Question #18
+
+Write a query that prints a list of employee names (i.e.: the name attribute) for employees in **Employee** having a salary greater than $\$2000$ per month who have been employees for less than $10$ months. Sort your result by ascending **employee_id**. The **Employee** table containing employee data for a company is described as follows: 
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/19629/1458557872-4396838885-ScreenShot2016-03-21at4.27.13PM.png" width="200">
+
+where **employee_id** is an employee's ID number, **name** is their name, **months** is the total number of months they've been working for the company, and **salary** is their monthly salary.
+
+**Sample Input**
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/19630/1458558612-af3da3ceb7-ScreenShot2016-03-21at4.32.59PM.png" width="200">
+
+**Sample Output**
+
+```
+Angela
+Michael
+Todd
+Joe
+```
+
+**Explanation**
+
+Angela has been an employee for $1$ month and earns $\$3443$ per month.
+Michael has been an employee for $6$ months and$ \$2017$ earns per month.
+Todd has been an employee for $5$ months and earns $\$3396$ per month.
+Joe has been an employee for $9$ months and earns $\$3573$ per month.
+We order our output by ascending **employee_id**.
+
+```
+SELECT NAME
+FROM EMPLOYEE
+WHERE (SALARY > 2000) AND (MONTHS < 10)
+ORDER BY EMPLOYEE_ID ASC;
+```
+
 ## Question #19
+
+Write a query identifying the type of each record in the **TRIANGLES** table using its three side lengths. Output one of the following statements for each record in the table:
+
+* `Equilateral`: It's a triangle with $3$ sides of equal length.
+* `Isosceles`: It's a triangle with $2$ sides of equal length.
+* `Scalene`: It's a triangle with $3$ sides of differing lengths.
+* `Not A Triangle`: The given values of `A`, `B`, and `C` don't form a triangle.
+
+The **TRIANGLES** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/12887/1443815629-ac2a843fb7-1.png" width="200">
+
+Each row in the table denotes the lengths of each of a triangle's three sides.
+
+**Sample Input**
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/12887/1443815827-cbfc1ca12b-2.png" width="200">
+
+**Sample Output**
+
+```
+Isosceles
+Equilateral
+Scalene
+Not A Triangle
+```
+
+**Explanation**
+
+Values in the tuple $(20, 20, 23)$ form an `Isosceles` triangle, because .
+Values in the tuple form an Equilateral triangle, because . Values in the tuple form a Scalene triangle, because .
+Values in the tuple cannot form a triangle because the combined value of sides and is not larger than that of side .
+
+## TOO LAZY TO FINISH EXPLANATION NOW
+
+```
+SELECT CASE
+WHEN (A+B > C) AND (B+C > A) AND (A+C > B) THEN
+CASE 
+WHEN (A=B) AND (B=C) THEN 'Equilateral'
+WHEN (A=B) OR (A=C) OR (B=C) THEN 'Isosceles'
+ELSE 'Scalene'
+END
+ELSE 'Not A Triangle'
+END
+FROM TRIANGLES;
+```
+
 ## Question #20
+
+Query a count of the number of cities in **CITY** having a **Population** larger than $100,000$. The **CITY** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
+
+```
+SELECT COUNT(NAME)
+FROM CITY
+WHERE (POPULATION > 100000);
+```
+
 ## Question #21
+
+Query the total population of all cities in **CITY** where **District** is `California`. The **CITY** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
+
+```
+SELECT SUM(POPULATION)
+FROM CITY
+WHERE (DISTRICT = "California");
+```
+
 ## Question #22
+
+Query the average population of all cities in **CITY** where **District** is `California`. The **CITY** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
+
+```
+SELECT AVG(POPULATION)
+FROM CITY
+WHERE (DISTRICT = "California");
+```
+
 ## Question #23
+
+Query the average population for all cities in CITY, rounded down to the nearest integer. The **CITY** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
+
+```
+SELECT FLOOR(AVG(POPULATION))
+FROM CITY;
+```
+
 ## Question #24
+
+Query the sum of the populations for all Japanese cities in **CITY**. The **COUNTRYCODE** for Japan is `JPN`. The **CITY** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
+
+```
+SELECT SUM(POPULATION)
+FROM CITY
+WHERE (COUNTRYCODE = 'JPN');
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Question #25
 ## Question #26
 ## Question #27
