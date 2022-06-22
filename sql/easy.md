@@ -224,7 +224,70 @@ WHERE CITY REGEXP '^[^aeiou].*[^aeiou]$';
 ```
 
 ## Question #16
+
+Query the **Name** of any student in **STUDENTS** who scored higher than $75$ marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: `Bobby`, `Robby`, etc.), secondary sort them by ascending **ID**. The **STUDENTS** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/12896/1443815243-94b941f556-1.png" width="200">
+
+The **Name** column only contains uppercase (A-Z) and lowercase (a-z) letters.
+
+**Sample Input**
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/12896/1443815209-cf4b260993-2.png" width="200">
+
+**Sample Output**
+
+```
+Ashley
+Julia
+Belvet
+```
+
+**Explanation**
+
+Only Ashley, Julia, and Belvet have > $75$ marks. If you look at the last three characters of each of their names, there are no duplicates and `'ley'` < `'lia'` < `'vet'`. 
+
+```
+SELECT NAME
+FROM STUDENTS
+WHERE (MARKS > 75)
+ORDER BY RIGHT(NAME,3) ASC, ID ASC;
+```
+
 ## Question #17
+
+Write a query that prints a list of employee names (i.e.: the name attribute) from the **Employee** table in alphabetical order.  The **Employee** table containing employee data for a company is described as follows: 
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/19629/1458557872-4396838885-ScreenShot2016-03-21at4.27.13PM.png" width="200">
+
+where **employee_id** is an employee's ID number, **name** is their name, **months** is the total number of months they've been working for the company, and **salary** is their monthly salary.
+
+**Sample Input**
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/19629/1458558202-9a8721e44b-ScreenShot2016-03-21at4.32.59PM.png" width="200">
+
+**Sample Output**
+
+```
+Angela
+Bonnie
+Frank
+Joe
+Kimberly
+Lisa
+Michael
+Patrick
+Rose
+Todd
+```
+
+```
+SELECT NAME
+FROM EMPLOYEE
+ORDER BY NAME ASC;
+```
+
+
 ## Question #18
 ## Question #19
 ## Question #20
