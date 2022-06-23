@@ -1,4 +1,4 @@
-These are answers to HackerRank's easy SQL challenges as of 06-21-2022. All answers are written in MySQL.
+These are answers to HackerRank's easy SQL challenges as of 06-23-2022. All answers are written in MySQL.
 
 ## Question #1
 
@@ -357,7 +357,7 @@ Values in the tuple $(20, 20, 23)$ form an `Isosceles` triangle, because .
 Values in the tuple form an Equilateral triangle, because . Values in the tuple form a Scalene triangle, because .
 Values in the tuple cannot form a triangle because the combined value of sides and is not larger than that of side .
 
-## TOO LAZY TO FINISH EXPLANATION NOW
+# TOO LAZY TO FINISH EXPLANATION NOW
 
 ```
 SELECT CASE
@@ -431,27 +431,40 @@ FROM CITY
 WHERE (COUNTRYCODE = 'JPN');
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Question #25
+
+Query the difference between the maximum and minimum populations in **CITY**. The **CITY** table is described as follows:
+
+<img src = "https://s3.amazonaws.com/hr-challenge-images/8137/1449729804-f21d187d0f-CITY.jpg" width="200">
+
+```
+SELECT (MAX(POPULATION)-MIN(POPULATION))
+FROM CITY;
+```
+
 ## Question #26
+
+Samantha was tasked with calculating the average monthly salaries for all employees in the EMPLOYEES table, but did not realize her keyboard's
+
+key was broken until after completing the calculation. She wants your help finding the difference between her miscalculation (using salaries with any zeros removed), and the actual average salary.
+
+Write a query calculating the amount of error (i.e.:
+average monthly salaries), and round it up to the next integer.
+
+# ALSO TOO LAZY TO COMPLETE INSTRUCTIONS NOW
+
 ## Question #27
+
+Query the sum of Northern Latitudes (**LAT_N**) from **STATION** having values greater than $38.7880$ and less than $137.2345$. Truncate your answer to $4$ decimal places.
+
 ## Question #28
 ## Question #29
 ## Question #30
 ## Question #31
+## Question #32
+## Question #33
+## Question #34
+## Question #35
+## Question #36
+## Question #37
+## Question #38
